@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './data_mapper_setup'
 
-class BookMarkManagerWeb < Sinatra::Base
+class BookMarkManager < Sinatra::Base
   get'/' do
     'Hello BookMarkManager'
   end
