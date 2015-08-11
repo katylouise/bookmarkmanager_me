@@ -21,4 +21,5 @@ class BookMarkManager < Sinatra::Base
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
+  set :views, proc { File.join(root, '..', 'views') }
 end
