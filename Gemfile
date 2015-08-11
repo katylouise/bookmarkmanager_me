@@ -5,6 +5,7 @@ ruby '2.2.2'
 gem 'data_mapper'
 gem 'database_cleaner'
 gem 'dm-postgres-adapter'
+gem 'pg'
 gem 'rack'
 gem 'sinatra'
 
