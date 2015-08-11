@@ -1,3 +1,4 @@
+#See pill on Makers to create this - it allows you to upgrade or migrate your db when needed rather than automatically.
 require 'data_mapper'
 require './data_mapper_setup'
 
