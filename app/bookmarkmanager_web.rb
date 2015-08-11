@@ -2,6 +2,10 @@ require 'sinatra/base'
 require './data_mapper_setup'
 
 class BookMarkManagerWeb < Sinatra::Base
+  get'/' do
+    'Hello BookMarkManager'
+  end
+
    get '/links' do
     @links = Link.all
     erb :'links/index'
