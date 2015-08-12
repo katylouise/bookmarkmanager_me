@@ -1,7 +1,9 @@
 require 'sinatra/base'
 require './data_mapper_setup'
+require './app/helpers.rb'
 
 class BookMarkManager < Sinatra::Base
+
   set :views, proc { File.join(root, 'views') }
 
   enable :sessions
@@ -49,9 +51,7 @@ class BookMarkManager < Sinatra::Base
   end
 
   helpers do
-    def current_user
-      @current_user ||= User.get(session[:user_id])
-    end
+    include AppHelpers
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
