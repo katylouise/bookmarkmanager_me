@@ -9,7 +9,9 @@ class User
   attr_accessor :password_confirmation
 
   property :id, Serial
-  property :email, String
+
+  #the required: true negates the need for validates_presence_of :email
+  property :email, String, required: true
 
   #stores password and salt
   #needs to be text rather than string
