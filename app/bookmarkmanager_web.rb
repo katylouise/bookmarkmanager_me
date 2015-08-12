@@ -43,14 +43,15 @@ class BookMarkManager < Sinatra::Base
   end
 
   get '/users/new' do
+    @user = User.new
     erb :'users/new'
   end
 
   post '/users' do
     #we just initialize the object without saving it - may be invalid.
-    user = User.new(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
-    if user.save #returns true/false depending on whether model is successfully saved to db
-      session[:user_id] = user.id
+    @user = User.new(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
+    if @user.save #returns true/false depending on whether model is successfully saved to db
+      session[:user_id] = @user.id
       redirect to('/links')
     else
       flash.now[:notice] = 'Password and confirmation password do not match'

@@ -5,6 +5,7 @@ class User
   include DataMapper::Resource
 
   attr_reader :password
+  #Writable so it acts like the setter method for password below
   attr_accessor :password_confirmation
 
   property :id, Serial
