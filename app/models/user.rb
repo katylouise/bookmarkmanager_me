@@ -25,6 +25,7 @@ class User
   # read more about it in the documentation
   # http://datamapper.org/docs/validations.html
   validates_confirmation_of :password
+  validates_uniqueness_of :email
 
   # when assigned the password, we don't store it directly
   # instead, we generate a password digest, that looks like this:
