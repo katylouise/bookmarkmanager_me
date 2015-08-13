@@ -30,6 +30,8 @@ feature 'User sign up' do
     expect(page).to have_content('Email is already taken')
   end
 
+end
+
   def sign_up_as(user)
     visit '/users/new'
     fill_in :email,   with: user.email
@@ -37,4 +39,3 @@ feature 'User sign up' do
     fill_in :password_confirmation, with: user.password_confirmation
     click_button 'Sign up'
   end
-end
