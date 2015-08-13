@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe User do
   let(:user) { create(:user) }
   it 'authenticates when given a valid email address and password' do
