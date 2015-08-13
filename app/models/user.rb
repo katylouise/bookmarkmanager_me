@@ -39,7 +39,7 @@ class User
   end
 
   def self.authenticate(email, password)
-    user = User.first(email: email)
+    user = self.first(email: email)
   # if this user exists and the password provided matches
   # the one we have password_digest for, everything's fine
   #

@@ -29,13 +29,22 @@ feature 'User sign up' do
     expect { sign_up_as(user) }.to change(User, :count).by(0)
     expect(page).to have_content('Email is already taken')
   end
-
 end
 
-  def sign_up_as(user)
-    visit '/users/new'
-    fill_in :email,   with: user.email
-    fill_in :password, with: user.password
-    fill_in :password_confirmation, with: user.password_confirmation
-    click_button 'Sign up'
+feature 'User sign in' do
+  scenario 'with correct credentials' do
+    user = create(:user) #saves user in database so we can test against this existing user
+    sign_in(user)
+    expect(page).to have_content "Welcome, #{user.email}"
   end
+end
+
+feature 'User signs out' do
+  let(:user) { create(:user) }
+  scenario 'while being signed in' do
+    sign_in(user)
+    click_button 'Sign out'
+    expect(page).to have_content('Goodbye!')
+    expect(page).not_to have_content('Welcome, alice@example.com')
+  end
+end

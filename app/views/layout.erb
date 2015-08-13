@@ -5,6 +5,11 @@
 </head>
 <body>
   <% if current_user %>
+  <form method='post' action='/sessions'>
+    <input type='hidden' name='_method' value='delete'>
+    <!-- This makes sinatra treat submit as a DELETE request -->
+    <input type='submit' value='Sign out'>
+  </form>
   Welcome, <%= current_user.email %>
   <% end %>
   <% if flash[:errors] && !flash[:errors].empty? %>
@@ -15,7 +20,11 @@
       <% end %>
      </ul>
     <% end %>
-
+    <% if flash[:notice] %>
+      <div id='notice'>
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
   <%= yield %>
 </body>
 </html>
