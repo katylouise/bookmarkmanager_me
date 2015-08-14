@@ -16,10 +16,10 @@ module TheApp
         erb :'/users/password_reset'
       end
 
-      post '/password_reset/:token' do
-        user = User.first(email: params[:email])
+      post '/password_reset/:token' do #still trying to fix this feature
+        @user = User.first(email: params[:email])
         # if session[:token] == user.password_token
-          # user.password = params[:new_password]
+          @user.update(password: params[:new_password])
           'Your password has been changed!'
           session.clear
         # end
