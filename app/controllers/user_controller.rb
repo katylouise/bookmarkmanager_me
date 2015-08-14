@@ -1,6 +1,6 @@
 module TheApp
   module Routes
-    class User_Controller < Base
+    class UserController < Base
       get '/users/new' do
         @user = User.new
       erb :'users/new'

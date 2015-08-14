@@ -4,11 +4,6 @@ FactoryGirl.define do
     title 'Makers Academy'
   end
 
-  factory :gg, class: Link do
-    url 'http://www.google.com'
-    title 'Google'
-  end
-
   factory :zm, class: Link do
     url 'http://www.zombo.com'
     title 'This is Zombocom'

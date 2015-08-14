@@ -1,6 +1,6 @@
 module TheApp
   module Routes
-    class Link_Controller < Base
+    class LinkController < Base
       get '/links' do
         @links = Link.all
         erb :'links/index'

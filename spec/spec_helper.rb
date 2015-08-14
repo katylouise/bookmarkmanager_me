@@ -4,7 +4,6 @@ ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app/bookmarkmanager_web.rb')
 
-require 'capybara'
 require 'capybara/rspec'
 require 'database_cleaner'
 require 'factory_girl'

@@ -1,6 +1,6 @@
 module TheApp
   module Routes
-    class Session_Controller < Base
+    class SessionController < Base
 
     get '/sessions/new' do
       erb :'sessions/new'

@@ -8,6 +8,7 @@ require './app/controllers/link_controller'
 require './app/controllers/tags_controller'
 require './app/controllers/user_controller'
 require './app/controllers/session_controller'
+require './app/controllers/password_controller'
 
 module TheApp
   class BookMarkManager < Sinatra::Base
@@ -16,10 +17,11 @@ module TheApp
       erb :index
     end
 
-    use Routes::Link_Controller
-    use Routes::Tag_Controller
-    use Routes::User_Controller
-    use Routes::Session_Controller
+    use Routes::LinkController
+    use Routes::TagController
+    use Routes::UserController
+    use Routes::SessionController
+    use Routes::PasswordController
     register Sinatra::Flash
     register Sinatra::Partial
   end

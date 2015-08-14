@@ -1,13 +1,7 @@
-require 'sinatra/base'
-require 'sinatra/flash'
-require './app/helpers'
-require_relative '../../data_mapper_setup'
-
-
 module TheApp
   module Routes
     class Base < Sinatra::Base
-      include AppHelpers
+      include AppHelpers #you need these in base and the main controller
       enable :sessions
       register Sinatra::Flash
       use Rack::MethodOverride

@@ -17,7 +17,7 @@ class User
   #needs to be text rather than string
   #so it can store more than 50 characters
   property :password_digest, Text
-
+  property :password_token, Text
   # validates_confirmation_of is a DataMapper method
   # provided especially for validating confirmation passwords!
   # The model will not save unless both password

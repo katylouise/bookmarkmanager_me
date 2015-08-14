@@ -50,5 +50,12 @@ feature 'User signs out' do
 end
 
 feature 'Password reset' do
-
+  let(:user) { create(:user) }
+  scenario 'requesting a password reset' do
+    visit '/password_reset'
+    fill_in 'email', with: user.email
+    click_button 'Reset password'
+    expect(user.password_token).not_to be_nil
+    expect(page).to have_content 'Check your emails'
+  end
 end
