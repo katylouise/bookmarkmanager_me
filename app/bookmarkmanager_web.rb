@@ -10,13 +10,13 @@ require './app/controllers/user_controller'
 require './app/controllers/session_controller'
 require './app/controllers/password_controller'
 
+include TheApp::Models
 module TheApp
   class BookMarkManager < Sinatra::Base
     include AppHelpers
     get '/' do
       erb :index
     end
-
     use Routes::LinkController
     use Routes::TagController
     use Routes::UserController

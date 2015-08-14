@@ -55,19 +55,26 @@ feature 'Password reset' do
     visit '/password_reset'
     fill_in 'email', with: user.email
     click_button 'Reset password'
-    p user
-    p user.password_token
     expect(user.password_token).not_to be_nil
-    p user
-    p user.password_token
     expect(page).to have_content 'Check your emails'
   end
 
-  scenario 'resetting password' do
+  scenario 'entering a new password' do
     user.password_token = 'token'
     user.save
     visit "/password_reset/#{user.password_token}"
     expect(page.status_code).to eq 200
     expect(page).to have_content 'Enter a new password'
+  end
+
+  xscenario 'resetting the password' do
+    user.password_token = 'token'
+    user.save
+    visit "/password_reset/#{user.password_token}"
+    #check password_token valid
+
+    click_button 'Submit'
+    expect(page).to have_content 'Your password has been changed!'
+    expect(user.password_token).to be_nil
   end
 end
