@@ -72,9 +72,10 @@ feature 'Password reset' do
     user.save
     visit "/password_reset/#{user.password_token}"
     #check password_token valid
-
+    p user
     click_button 'Submit'
     expect(page).to have_content 'Your password has been changed!'
     expect(user.password_token).to be_nil
+    p user
   end
 end

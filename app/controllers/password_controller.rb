@@ -19,7 +19,7 @@ module TheApp
       post '/password_reset/:token' do
         user = User.first(email: params[:email])
         # if session[:token] == user.password_token
-          user.password = params[:new_password]
+          # user.password = params[:new_password]
           'Your password has been changed!'
           session.clear
         # end
