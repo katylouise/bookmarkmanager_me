@@ -1,4 +1,3 @@
-require_relative './base_controller'
 module TheApp
   module Routes
     class Session_Controller < Base

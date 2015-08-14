@@ -48,3 +48,7 @@ feature 'User signs out' do
     expect(page).not_to have_content('Welcome, alice@example.com')
   end
 end
+
+feature 'Password reset' do
+
+end
