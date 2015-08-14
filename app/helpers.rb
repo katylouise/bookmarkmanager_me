@@ -4,7 +4,6 @@ module AppHelpers
   end
 
   def generate_password_token
-    value = ""
-    20.times{ value << (65 + rand(26)).chr }
+    (0..20).map { (65 + rand(26)).chr }.join
   end
 end
