@@ -10,6 +10,8 @@ module TheApp
         user.password_token = generate_password_token
         user.save
         'Check your emails'
+        #Save token as a session var session[:token]
+        #page to go to is password_reset/:token
       end
     end
   end
