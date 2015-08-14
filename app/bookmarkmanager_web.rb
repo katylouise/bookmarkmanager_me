@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/flash'
-
+require 'sinatra/partial'
 require './data_mapper_setup'
 require './app/helpers'
 require './app/controllers/base_controller'
@@ -8,8 +8,6 @@ require './app/controllers/link_controller'
 require './app/controllers/tags_controller'
 require './app/controllers/user_controller'
 require './app/controllers/session_controller'
-
-
 
 module TheApp
   class BookMarkManager < Sinatra::Base
@@ -23,10 +21,6 @@ module TheApp
     use Routes::User_Controller
     use Routes::Session_Controller
     register Sinatra::Flash
-
-
-
-    # start the server if ruby file executed directly
-
+    register Sinatra::Partial
   end
 end
