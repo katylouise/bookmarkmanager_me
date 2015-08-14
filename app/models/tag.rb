@@ -1,3 +1,4 @@
+
 class Tag
   include DataMapper::Resource
 
@@ -5,5 +6,4 @@ class Tag
   property :name, String
 
   has n, :links, through: Resource
-
 end
