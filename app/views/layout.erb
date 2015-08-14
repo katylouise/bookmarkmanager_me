@@ -4,14 +4,7 @@
   <title>Bookmark Manager</title>
 </head>
 <body>
-  <% if current_user %>
-  <form method='post' action='/sessions'>
-    <input type='hidden' name='_method' value='delete'>
-    <!-- This makes sinatra treat submit as a DELETE request -->
-    <input type='submit' value='Sign out'>
-  </form>
   <%= erb :welcome %>
-  <% end %>
   <%= erb :flash %>
   <%= yield %>
 </body>
